@@ -31,11 +31,11 @@ const initialState = {
         italyanLang: '',
         isSelectAdd: false,
         isAlmanLang: false,
-        isIspanLang:false ,
-        isFransizLang: false ,
-        isYaponLang: false ,
-        isTurkLang: false ,
-        isItalyanLang: false ,
+        isIspanLang: false,
+        isFransizLang: false,
+        isYaponLang: false,
+        isTurkLang: false,
+        isItalyanLang: false,
     }
 };
 
@@ -46,14 +46,12 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 selectValues: { ...state.selectValues, ...action.payload },
-
             };
         case 'UPDATE_LANG_VALUES':
             // console.log(action.payload)
             return {
                 ...state,
                 langValues: { ...state.langValues, ...action.payload },
-
             };
         default:
             return state;

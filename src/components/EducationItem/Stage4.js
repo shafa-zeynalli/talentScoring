@@ -13,25 +13,16 @@ import Input from "../UI/Input/Input";
 import LangRadio from "../UI/LangRadio/LangRadio";
 
 const Stage4 = (props) => {
-  const [value1, setValue1] = useState([]);
-  // console.log(value1);
-  // console.log(value1[0]?.value==='ingilis');
-
-  // const selectLangValue= [value1[0]?.value, value1[1]?.value ];
-  // console.log(selectLangValue)
-
   const navigate = useNavigate();
-
-  
   const todo = useSelector((state) => state.langValues);
-
   const dispatch = useDispatch();
+
   const [selectValues, setSelectValues] = useState({
     confirmlang1: todo.confirmlang1 === "" ? "" : todo.confirmlang1,
     confirmlang2: todo.confirmlang2 === "" ? "" : todo.confirmlang2,
     confirmlang3: todo.confirmlang3 === "" ? "" : todo.confirmlang3,
     confirmlangRus: todo.confirmlangRus === "" ? "" : todo.confirmlangRus,
-    selectLang: todo.selectLang === [] ?  [] : todo.selectLang,
+    selectLang: todo.selectLang === [] ? [] : todo.selectLang,
     selectIelts: todo.selectIelts === "" ? "" : todo.selectIelts,
     selectToefl: todo.selectToefl === "" ? "" : todo.selectToefl,
   });
@@ -62,18 +53,14 @@ const Stage4 = (props) => {
     { value: "8.5", label: "8.5", name: "selectIelts" },
     { value: "9.0", label: "9.0", name: "selectIelts" },
   ];
-  
+
   useEffect(() => {
     dispatch(updateLangValue(selectValues));
     console.log(dispatch(updateLangValue(selectValues)));
-
   }, [selectValues]);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // dispatch(updateLangValue(selectValues));
-    // console.log(dispatch(updateLangValue(selectValues)));
-    // navigate("/stage5");
   };
 
   return (
@@ -81,7 +68,7 @@ const Stage4 = (props) => {
       <div className={classes.education}>
         <h2>Dil Bilikləri</h2>
         <ChartBar currentPageIndex="1" maxPageIndex="2" />
-        <form  onSubmit={submitHandler} >
+        <form onSubmit={submitHandler}>
           <div className={classes.educations__controls}>
             <div className={classes.education__control}>
               <label>Xarici dil bilikləriniz var?*</label>
@@ -136,10 +123,14 @@ const Stage4 = (props) => {
                 options={optionsLang}
                 value={selectValues.selectLang}
                 onChange={(e) => {
-                  // setValue1(e); 
-                const { name, value } = e;
-                console.log(e);
-                setSelectValues((prevState, selectLang ) => ({ ...prevState, selectLang: e}));}}
+                  // setValue1(e);
+                  const { name, value } = e;
+                  console.log(e);
+                  setSelectValues((prevState, selectLang) => ({
+                    ...prevState,
+                    selectLang: e,
+                  }));
+                }}
               />
             )}
 
@@ -222,7 +213,7 @@ const Stage4 = (props) => {
               )}
             {selectValues.confirmlang1 === "yes" &&
               (selectValues.selectLang[0]?.value === "ingilis" ||
-              selectValues.selectLang[1]?.value === "ingilis") &&
+                selectValues.selectLang[1]?.value === "ingilis") &&
               selectValues.confirmlang2 === "ielts" && (
                 <div>
                   <Select
@@ -235,7 +226,7 @@ const Stage4 = (props) => {
               )}
             {selectValues.confirmlang1 === "yes" &&
               (selectValues.selectLang[0]?.value === "ingilis" ||
-              selectValues.selectLang[1]?.value === "ingilis") &&
+                selectValues.selectLang[1]?.value === "ingilis") &&
               selectValues.confirmlang2 === "toefl" && (
                 <div className={classes.lang__input}>
                   <Input
@@ -250,7 +241,7 @@ const Stage4 = (props) => {
               )}
             {selectValues.confirmlang1 === "yes" &&
               (selectValues.selectLang[0]?.value === "ingilis" ||
-              selectValues.selectLang[1]?.value === "ingilis") &&
+                selectValues.selectLang[1]?.value === "ingilis") &&
               selectValues.confirmlang2 === "yoxdur" && (
                 <>
                   <label>İngilis dili üzrə səviyyənizi qeyd edin?*</label>
@@ -263,6 +254,7 @@ const Stage4 = (props) => {
                       value="a1ing"
                       id="a1ing"
                       label="A1 (Başlanqıc)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "a1ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -282,6 +274,7 @@ const Stage4 = (props) => {
                       value="a2ing"
                       id="a2ing"
                       label="A2(Elementar)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "a2ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -301,6 +294,7 @@ const Stage4 = (props) => {
                       value="b1ing"
                       id="b1ing"
                       label="B1 (İlkin orta)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "b1ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -320,6 +314,7 @@ const Stage4 = (props) => {
                       value="b2ing"
                       id="b2ing"
                       label="B2 (İlkin orta)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "b2ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -339,6 +334,7 @@ const Stage4 = (props) => {
                       value="c1ing"
                       id="c1ing"
                       label="C1 (Üst orta)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "c1ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -358,6 +354,7 @@ const Stage4 = (props) => {
                       value="c2ing"
                       id="c2ing"
                       label="C2 (İrəli)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "c2ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -376,7 +373,8 @@ const Stage4 = (props) => {
                 </>
               )}
             {selectValues.confirmlang1 === "yes" &&
-              (selectValues.selectLang[0]?.value === "rus"  &&  selectValues.selectLang[1]?.value !== "ingilis") && (
+              selectValues.selectLang[0]?.value === "rus" &&
+              selectValues.selectLang[1]?.value !== "ingilis" && (
                 <>
                   <label>Rus dili üzrə səviyyənizi qeyd edin?*</label>
 
@@ -409,6 +407,7 @@ const Stage4 = (props) => {
                       value="a2ing"
                       id="a2ing"
                       label="A2(Elementar)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "a2ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -428,6 +427,7 @@ const Stage4 = (props) => {
                       value="b1ing"
                       id="b1ing"
                       label="B1 (İlkin orta)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "b1ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -447,6 +447,7 @@ const Stage4 = (props) => {
                       value="b2ing"
                       id="b2ing"
                       label="B2 (İlkin orta)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "b2ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -466,6 +467,7 @@ const Stage4 = (props) => {
                       value="c1ing"
                       id="c1ing"
                       label="C1 (Üst orta)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "c1ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -485,6 +487,7 @@ const Stage4 = (props) => {
                       value="c2ing"
                       id="c2ing"
                       label="C2 (İrəli)"
+                      className={classes.radioLang}
                       confirm={selectValues.confirmlang3 === "c2ing"}
                       changeHandlerRadio={handleChangeConfirm}
                       style1={{
@@ -502,35 +505,38 @@ const Stage4 = (props) => {
                   </div>
                 </>
               )}
-           {selectValues.confirmlang1 === "yes" &&
-              ((selectValues.selectLang[0]?.value === "rus" && selectValues.selectLang[1]?.value === "ingilis") || (selectValues.selectLang[0]?.value === "ingilis" && selectValues.selectLang[1]?.value === "rus")) &&   
-                
-               (<div className={classes.langRadio}>
-              <label>Rus dili üzrə səviyyənizi qeyd edin?*</label> 
-              <LangRadio
-                className={classes.radio}
-                name="confirmlangRus"
-                value1="a1rus"
-                value2="a2rus"
-                value3="b1rus"
-                value4="b2rus"
-                value5="c1rus"
-                value6="c2rus"
-                confirm1={selectValues.confirmlangRus === "a1rus"}
-                confirm2={selectValues.confirmlangRus === "a2rus"}
-                confirm3={selectValues.confirmlangRus === "b1rus"}
-                confirm4={selectValues.confirmlangRus === "b2rus"}
-                confirm5={selectValues.confirmlangRus === "c1rus"}
-                confirm6={selectValues.confirmlangRus === "c2rus"}
-                changeHandlerRadio={handleChangeConfirm}
-              />
-            </div>)}
+            {selectValues.confirmlang1 === "yes" &&
+              ((selectValues.selectLang[0]?.value === "rus" &&
+                selectValues.selectLang[1]?.value === "ingilis") ||
+                (selectValues.selectLang[0]?.value === "ingilis" &&
+                  selectValues.selectLang[1]?.value === "rus")) && (
+                <div className={classes.langRadio}>
+                  <label>Rus dili üzrə səviyyənizi qeyd edin?*</label>
+                  <LangRadio
+                    className={classes.radio}
+                    name="confirmlangRus"
+                    value1="a1rus"
+                    value2="a2rus"
+                    value3="b1rus"
+                    value4="b2rus"
+                    value5="c1rus"
+                    value6="c2rus"
+                    confirm1={selectValues.confirmlangRus === "a1rus"}
+                    confirm2={selectValues.confirmlangRus === "a2rus"}
+                    confirm3={selectValues.confirmlangRus === "b1rus"}
+                    confirm4={selectValues.confirmlangRus === "b2rus"}
+                    confirm5={selectValues.confirmlangRus === "c1rus"}
+                    confirm6={selectValues.confirmlangRus === "c2rus"}
+                    changeHandlerRadio={handleChangeConfirm}
+                  />
+                </div>
+              )}
           </div>
           <div className={classes.buttons}>
             <Button className={classes.button} onClick={() => navigate(-1)}>
               Geri
             </Button>
-            <Button onClick={() => navigate('/stage/stage5')}>Növbəti </Button>
+            <Button onClick={() => navigate("/stage/stage5")}>Növbəti </Button>
           </div>
         </form>
       </div>
