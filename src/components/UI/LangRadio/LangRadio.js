@@ -1,5 +1,6 @@
 import Radio from "../Radio/Radio";
-import classes from './LangRadio.module.css'
+import classes from './LangRadio.module.css';
+import { TiDeleteOutline } from 'react-icons/ti';
 
 
 const LangRadio = (props) => {
@@ -8,7 +9,7 @@ const LangRadio = (props) => {
         confirm1, confirm2, confirm3, confirm4, confirm5, confirm6, } = props
     return (
         <div className={classes.langRadio}>
-            <div className={`${className ? className :classes.div}  `} onClick={onClick}>{langName} <div> &times;</div></div>
+            <div className={`${className ? className :classes.div}  `} onClick={onClick}>{langName} <TiDeleteOutline className={classes.icon}/></div>
             <Radio
                 className={classes.radio}
                 label='A1'

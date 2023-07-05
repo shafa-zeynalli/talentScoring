@@ -530,7 +530,7 @@ const Stage4 = (props) => {
             <Button className={classes.button} onClick={() => navigate(-1)}>
               Geri
             </Button>
-            <Button onClick={() => navigate('/stage5')}>Növbəti </Button>
+            <Button onClick={() => navigate('/stage/stage5')}>Növbəti </Button>
           </div>
         </form>
       </div>

@@ -89,7 +89,7 @@ const Stage1 = (props) => {
         // console.log(selectValues)
 
         { (item.isEducation || selectValues.select2 === '') && navigate('/stage3') };
-        { !item.isEducation && navigate('/stage2', { state: {  isPeshe: item.isProfession, isBachelor: item.isBachelors, isMaster: item.isMaster, isPHD: item.isDoctoral , isSelect: selectValues} }) };
+        { !item.isEducation && navigate('/stage/stage2', { state: {  isPeshe: item.isProfession, isBachelor: item.isBachelors, isMaster: item.isMaster, isPHD: item.isDoctoral , isSelect: selectValues} }) };
         // console.log(dispatch(updateSelectValue(selectValues)));
         dispatch(updateSelectValue(selectValues));
     }

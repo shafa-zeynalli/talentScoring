@@ -58,7 +58,7 @@ const Stage2 = (props) => {
   // console.log(profession, bachelor, master, phd);
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate("/stage3");
+    navigate("/stage/stage3");
     dispatch(updateSelectValue(selectData));
   };
 

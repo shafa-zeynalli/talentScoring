@@ -1,0 +1,274 @@
+.page {
+  position: relative;
+  width: 100%;
+}
+.bg {
+  position: absolute;
+  right: 10px;
+  z-index: -1;
+  width: 50%;
+  height: 150vh;
+  
+}
+.bg img {
+  width: 100%;
+  object-fit: scale-down;
+}
+.line {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  width: 300px;
+  height: 1px;
+  transform: rotate(90deg);
+  background-color: #1fedc9;
+}
+ 
+.container {
+  width: 70%;
+  margin: 10px auto;
+}
+.container2 {
+  width: 90%;
+  margin: 10px auto;
+}
+.logo {
+  top: 24px;
+  width: 91px;
+  height: 12px;
+  object-fit: scale-down;
+}
+.logo img{
+  object-fit: scale-down; 
+}
+.text {
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+.text p {
+  width: 700px;
+  text-align: center;
+  font-size: 16px;
+  margin: 20px auto;
+}
+.pages {
+  display: flex;
+}
+.cardMain {
+  width: 50%;
+}
+.card {
+  border-radius: 13px;
+  width: 100%;
+  height: 710px;
+  border: 1px solid #f5f9fa;
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+.profile {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  border-bottom: 1px solid #edf4f6;
+  padding-bottom: 10px;
+}
+.profile p {
+  font-size: 9px;
+  align-items: center;
+  justify-items: center;
+  vertical-align: middle;
+  margin: auto 0;
+}
+.profile img {
+  width: 74px;
+  height: 74px;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 10px;
+  object-fit: scale-down;
+}
+.information {
+  display: flex;
+}
+.information p {
+  width: 50%;
+}
+.information p:first-child {
+  padding-right: 10%;
+  font-size: 9px;
+  border-right: 1px solid #edf4f6;
+}
+.information p:last-child {
+  padding-left: 10%;
+  font-size: 9px; 
+}
+.score {
+  display: flex;
+  width: 100%;
+  margin-top: 15px;
+}
+.col3 {
+  width: 33%;
+  height: 130px;
+  margin: 0 auto;
+}
+.col3 img {
+  width: 100%;
+  height: 100%; 
+  margin: 0 auto;
+  object-fit: scale-down;
+}
+.col3 h6 {
+  font-size: 10px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.price {
+  display: flex;
+  margin: 0 10px 0 30px;
+}
+.price ul {
+  padding: 0;
+  margin: 10px 8px 0 0;
+}
+.price ul li {
+  list-style-type: none;
+  font-size: 9px;
+  line-height: normal;
+}
+.card .text {
+  margin: 5px auto;
+  width: 70%;
+}
+.card .text p {
+  font-size: 9px;
+  width: 100%;
+}
+.chart3 {
+  display: flex;
+  flex-direction: column;
+}
+.chart3 img {
+  width: 80%;
+  margin: 0 auto;
+  height: 200px;
+  object-fit: contain;
+}
+.verifed {
+  position: absolute;
+  left: 470px;
+  bottom: 90px;
+  color: #edf4f6;
+  font-size: 28px;
+  transform: rotate(-30deg);
+}
+ 
+.logoText { 
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+}
+.logoText img {
+  padding: 0;
+  margin: 0;
+  object-fit: cover;
+}
+.logoText p {
+  color: #00ebc2;
+  padding: 0;
+  margin: 0;
+  font-size: 6px;
+  text-align: center;
+}
+.button {
+  position: absolute;
+  padding: 12px;
+  text-align: center;
+  width: 180px;
+  left: 330px;
+  margin: 15px auto;
+  background-color: #238579;
+  border-radius: 12px;
+  border: none;
+  outline-offset: 2px;
+  outline: 1px solid #238579;
+  color: white;
+}
+.button:hover{
+    cursor: pointer; 
+}
+
+.premium {
+  position: absolute;
+  width: 30%;
+  right: 150px;
+  top: 190px;
+}
+h2 { 
+  font-size: 24px;
+}
+.premium p {
+  font-size: 16px;
+}
+.cardPremium {
+  width: 432px;
+  height: 500px;
+  border-radius: 12px 12px 0px 0px;
+  background: #f5f9fa;
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  
+}
+.cardPremium h4{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 30px 20px 0 20px;
+    color: black;
+
+}
+.cardPremium ul{
+    width: 400px;
+   margin: 0 auto;
+}
+.cardPremium ul li{
+    list-style-type: none;
+    margin: 10px;
+    justify-items: center;
+    color: black;
+}
+.cardPremium ul li:nth-child(4){
+    color: #6D6866;
+}
+.cardPremium ul li:nth-child(5){
+    color: #A29C9A;
+}
+.cardPremium ul li:nth-child(6){
+    color: #DAD5D5;
+}
+.cardPremium ul li:nth-child(4) .icon{
+    color: #88D7CA;
+
+}
+.cardPremium ul li:nth-child(5) .icon{
+    color: #BDDED9;
+
+}
+.cardPremium ul li:nth-child(6) .icon{
+    color: #DFEDEB;
+}
+.icon{
+    margin-right: 30px ;
+    font-size: 24px;
+    color: #08D0B0;
+}
+.cardPremium .button{ 
+    position: absolute;
+     bottom: 90px;
+     left: 140px;
+}

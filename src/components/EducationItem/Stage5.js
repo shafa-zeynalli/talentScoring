@@ -218,7 +218,7 @@ const Stage5 = () => {
             </div>
 
             <Button className={classes.buttonBack} onClick={() => navigate(-1)}>Geri</Button>
-            <Button type='submit' >Növbəti </Button>
+            <Button  onClick={() => navigate('/score')} >Növbəti </Button>
 
         </Card>
     )
