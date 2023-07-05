@@ -68,12 +68,12 @@ const EducationScore = () => {
                                             <img src={chart3} />
                                         </div>
                                     </div>
-                                    <div className={classes.text}>
+                                    <div className={classes.text1}>
                                         <p>The following charts show your ability compared to peer averages by field. A short description of each skill and competency is included in the report</p>
                                     </div>
                                     <div className={classes.chart3}>
                                         <img src={chart1} />
-                                        <div className={classes.text}>
+                                        <div className={classes.text2}>
                                             <p>Your general abilities tells that you're quite capable and skillfull
                                                 person. However your work experience is not a lot. We offer you
                                                 to focus on your work experience....</p>
